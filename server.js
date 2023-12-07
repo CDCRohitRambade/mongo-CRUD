@@ -7,7 +7,9 @@ import dotenv from "dotenv";
 dotenv.config();
 const PORT = process.env.PORT | 3001;
 import menteeRoutes from "./routes/menteeRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
+app.use("/", userRoutes);
 app.use("/mentees", menteeRoutes);
 //connect to database
 connectDB();

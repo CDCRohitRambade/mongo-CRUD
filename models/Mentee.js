@@ -6,6 +6,7 @@ const MenteeSchema = new Schema({
   username: String,
   email: String,
   password: String,
+  role:String,
   college: String,
 });
 

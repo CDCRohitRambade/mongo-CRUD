@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const MenteeSchema = new Schema({
+const MentorSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: "User" },
   expertise: String,
-  college: String,
+  company: String,
 });
 
-const Mentee = mongoose.model("Mentee", MenteeSchema);
-export default Mentee;
+const Mentor = mongoose.model("Mentor", MentorSchema);
+export default Mentor;

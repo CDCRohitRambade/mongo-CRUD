@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 const getAllMentees = async (req, res) => {
   try {
-    const mentees = await Mentee.find();
+    const mentees = await Mentee.find().populate("user");
     console.log(mentees);
     res.json(mentees);
   } catch (err) {
@@ -14,7 +14,7 @@ const getAllMentees = async (req, res) => {
 const specificMentees = async (req, res) => {
   const menteeId = req.params.id;
   try {
-    const mentee = await Mentee.findById({ _id: menteeId });
+    const mentee = await Mentee.findById({ _id: menteeId }).populate("user");
     console.log(mentee);
     res.json(mentee);
   } catch (error) {}
